@@ -28,6 +28,9 @@ import CopyLinkButton from "@/components/ui/copy-link-button";
 import ShareViaEmailButton from "@/components/ui/share-via-email-button";
 import ShareOnXButton from "@/components/ui/share-on-x-button";
 import ShareOnRedditButton from "@/components/ui/share-on-reddit-button";
+import CommentForm from "@/components/comment-form";
+import CommentsDisplay from "@/components/comments-display";
+import { comments } from "@/data/comment";
 
 export default function SinglePost() {
   const params = useParams();
@@ -184,6 +187,20 @@ export default function SinglePost() {
           </div>
         </section>
       </article>
+      <section className="mt-40">
+        <h2
+          className="text-center font-semibold tracking-tighter md:leading-[1.2]"
+          style={{ fontSize: "clamp(2rem, 1.4rem + 2vw, 3rem)" }}
+        >
+          Your Thoughts
+        </h2>
+        <div className="mx-auto mt-8 max-w-4xl">
+          <CommentForm />
+          <div className="mt-16">
+            <CommentsDisplay comments={comments} postId={article.postId} />
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

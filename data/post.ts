@@ -17,6 +17,7 @@ type Content = {
 };
 
 type Post = {
+  postId: number;
   slug: string;
   title: string;
   date: string;
@@ -27,6 +28,7 @@ type Post = {
 
 export const post: Post[] = [
   {
+    postId: 1,
     slug: "mastering-react-18-for-modern-web-performance",
     title: "Mastering React 18 for Modern Web Performance",
     date: "October 1, 2025",
