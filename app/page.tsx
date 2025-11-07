@@ -4,7 +4,7 @@ import LatestInCoding from "@/components/latest-in-coding";
 
 export default function Home() {
   return (
-    <main>
+    <main className="mt-20">
       <Hero />
       <FeaturedPosts />
       <LatestInCoding />

@@ -21,9 +21,9 @@ export default function Blog() {
   );
 
   return (
-    <main>
+    <main className="mt-20">
       <h1
-        className="mt-20 text-center font-semibold tracking-tighter md:leading-[1.2]"
+        className="text-center font-semibold tracking-tighter md:leading-[1.2]"
         style={{ fontSize: "clamp(2rem, 1.4rem + 2vw, 3rem)" }}
       >
         Blog

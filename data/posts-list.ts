@@ -65,7 +65,7 @@ export const postsList: PostList[] = [
     href: "/mastering-react-18-for-modern-web-performance",
     date: "December 10, 2025",
     author: "Olivia Taylor",
-    category: { name: "Development", href: "#" },
+    category: { name: "Backend", href: "#" },
   },
   {
     id: 6,
@@ -75,7 +75,7 @@ export const postsList: PostList[] = [
     href: "/mastering-react-18-for-modern-web-performance",
     date: "November 12, 2025",
     author: "Daniel Smith",
-    category: { name: "Development", href: "#" },
+    category: { name: "DevOps", href: "#" },
     featuredCategories: ["Pro Tips"],
   },
   {
@@ -86,7 +86,7 @@ export const postsList: PostList[] = [
     href: "/mastering-react-18-for-modern-web-performance",
     date: "December 12, 2025",
     author: "Emily Davis",
-    category: { name: "Development", href: "#" },
+    category: { name: "Backend", href: "#" },
   },
   {
     id: 8,
@@ -179,7 +179,7 @@ export const postsList: PostList[] = [
     href: "/mastering-react-18-for-modern-web-performance",
     date: "December 28, 2025",
     author: "John Mitchell",
-    category: { name: "Development", href: "#" },
+    category: { name: "Backend", href: "#" },
   },
   {
     id: 17,
@@ -219,7 +219,7 @@ export const postsList: PostList[] = [
     href: "/mastering-react-18-for-modern-web-performance",
     date: "November 1, 2025",
     author: "Olivia Taylor",
-    category: { name: "Development", href: "#" },
+    category: { name: "Frontend", href: "#" },
     featuredCategories: ["Pro Tips", "Community Picks"],
   },
   {
@@ -252,7 +252,7 @@ export const postsList: PostList[] = [
     href: "/mastering-react-18-for-modern-web-performance",
     date: "January 8, 2026",
     author: "Michael Clark",
-    category: { name: "Development", href: "#" },
+    category: { name: "Backend", href: "#" },
   },
   {
     id: 24,
@@ -314,7 +314,7 @@ export const postsList: PostList[] = [
     href: "/mastering-react-18-for-modern-web-performance",
     date: "January 18, 2026",
     author: "Emily Davis",
-    category: { name: "Development", href: "#" },
+    category: { name: "Backend", href: "#" },
   },
   {
     id: 30,
@@ -365,7 +365,7 @@ export const postsList: PostList[] = [
     href: "/mastering-react-18-for-modern-web-performance",
     date: "November 25, 2025",
     author: "James Walker",
-    category: { name: "Development", href: "#" },
+    category: { name: "Community", href: "#" },
     featuredCategories: ["Community Picks"],
   },
   {
@@ -439,7 +439,7 @@ export const postsList: PostList[] = [
     href: "/mastering-react-18-for-modern-web-performance",
     date: "February 5, 2026",
     author: "Olivia Taylor",
-    category: { name: "Development", href: "#" },
+    category: { name: "DevOps", href: "#" },
   },
   {
     id: 42,
@@ -460,7 +460,7 @@ export const postsList: PostList[] = [
     href: "/mastering-react-18-for-modern-web-performance",
     date: "November 20, 2025",
     author: "James Walker",
-    category: { name: "Artificial Intelligence", href: "#" },
+    category: { name: "AI", href: "#" },
     featuredCategories: ["Trending Now", "Pro Tips"],
   },
   {
@@ -481,7 +481,7 @@ export const postsList: PostList[] = [
     href: "/mastering-react-18-for-modern-web-performance",
     date: "February 10, 2026",
     author: "Sophia Brown",
-    category: { name: "Development", href: "#" },
+    category: { name: "Backend", href: "#" },
   },
   {
     id: 46,
