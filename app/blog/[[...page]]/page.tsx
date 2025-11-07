@@ -1,30 +1,50 @@
-"use client";
-
 import PostsListPagination from "@/components/ui/posts-list-pagination";
 import BlogPost from "@/components/ui/blog-post";
 import { Separator } from "@/components/ui/separator";
 import { postsList } from "@/data/posts-list";
-import { notFound, redirect, useParams } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 
-export default function Blog() {
-  const params = useParams();
+type StaticParams = {
+  page?: string[];
+};
+
+const POSTS_PER_PAGE = 8;
+const totalPages = Math.ceil(postsList.length / POSTS_PER_PAGE);
+
+export const generateStaticParams = () => {
+  const pages = Array.from({ length: totalPages }, (_, index) => ({
+    page: [(index + 1).toString()],
+  }));
+
+  return pages;
+};
+
+export default async function Blog({ params }: { params: StaticParams }) {
+  // Show 404 error if no posts are found or category doesn't exist
+  if (!postsList.length) notFound();
+
+  const { page } = await params;
 
   // Show 404 error if the page parameter exists but is not "page"
-  if (params.page && params.page?.[0] !== "page") notFound();
+  if (page && (page?.length === 1 || page?.length > 2 || page?.[0] !== "page"))
+    notFound();
 
-  if (Number(params.page?.[1]) === 1) {
+  // Redirects URL "/page" or "/page/1" to category page
+  if (page?.[0] === "page" && page?.[1] === "1") {
     redirect("/blog");
   }
 
-  const page = params.page ? Number(params.page[1]) : 1;
-  const POSTS_PER_PAGE = 8;
-
-  const totalPages = Math.ceil(postsList.length / POSTS_PER_PAGE);
-
   // Show 404 error if the page number is invalid or out of range
-  if (isNaN(page) || page > totalPages) notFound();
+  if (
+    page &&
+    (isNaN(Number(page?.[1])) ||
+      Number(page?.[1]) > totalPages ||
+      Number(page?.[1]) < 1)
+  )
+    notFound();
 
-  const startIndex = (page - 1) * POSTS_PER_PAGE;
+  const pageNumber = Number(page?.[1]) || 1;
+  const startIndex = (pageNumber - 1) * POSTS_PER_PAGE;
   const currentPostsList = postsList.slice(
     startIndex,
     startIndex + POSTS_PER_PAGE,
@@ -49,7 +69,7 @@ export default function Blog() {
         ))}
       </div>
       <PostsListPagination
-        currentPage={page}
+        currentPage={pageNumber}
         totalPages={totalPages}
         basePath="/blog"
       />
