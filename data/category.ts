@@ -3,47 +3,47 @@ import type { Category } from "./posts-list";
 export const categories: Category[] = [
   {
     name: "Frontend",
-    href: "/categories/frontend",
+    href: "/category/frontend",
     slug: "frontend",
   },
   {
     name: "Backend",
-    href: "/categories/backend",
+    href: "/category/backend",
     slug: "backend",
   },
   {
     name: "Full Stack",
-    href: "/categories/full-stack",
+    href: "/category/full-stack",
     slug: "full-stack",
   },
   {
     name: "Database",
-    href: "/categories/database",
+    href: "/category/database",
     slug: "database",
   },
   {
     name: "DevOps",
-    href: "/categories/devops",
+    href: "/category/devops",
     slug: "devops",
   },
   {
     name: "Data Science",
-    href: "/categories/data-science",
+    href: "/category/data-science",
     slug: "data-science",
   },
   {
     name: "Mobile",
-    href: "/categories/mobile",
+    href: "/category/mobile",
     slug: "mobile",
   },
   {
     name: "AI",
-    href: "/categories/ai",
+    href: "/category/ai",
     slug: "ai",
   },
   {
     name: "Cloud",
-    href: "categories/cloud",
+    href: "category/cloud",
     slug: "cloud",
   },
 ];

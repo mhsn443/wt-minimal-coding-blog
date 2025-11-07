@@ -15,10 +15,14 @@ const allCategories = categories.concat(featuredCategories);
 const POSTS_PER_PAGE = 8;
 
 export const generateStaticParams = () => {
-  return categories
+  return allCategories
     .map((category) => {
       const categoryPosts = postsList.filter(
-        (post) => post.category.slug === category.slug,
+        (post) =>
+          post.category.slug === category.slug ||
+          post.featuredCategories?.some(
+            (featuredCategory) => featuredCategory.slug === category.slug,
+          ),
       );
 
       const totalPages = Math.ceil(categoryPosts.length / POSTS_PER_PAGE);
@@ -28,7 +32,7 @@ export const generateStaticParams = () => {
       for (let page = 1; page <= totalPages; page++) {
         pages.push({
           category: category.slug,
-          page: page === 1 ? [] : [`page/${page}`],
+          page: page === 1 ? [] : ["page", page.toString()],
         });
       }
 
@@ -53,7 +57,7 @@ export default async function CategoryPosts({
 
   // Redirects URL "/page" or "/page/1" to category page
   if (page?.[0] === "page" && page?.[1] === "1") {
-    redirect(`/categories/${category}`);
+    redirect(`/category/${category}`);
   }
 
   let filteredPosts = postsList.filter((post) =>
@@ -108,7 +112,7 @@ export default async function CategoryPosts({
       <PostsListPagination
         currentPage={pageNumber}
         totalPages={totalPages}
-        basePath={`/categories/${category}`}
+        basePath={`/category/${category}`}
       />
     </main>
   );

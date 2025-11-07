@@ -13,8 +13,10 @@ const totalPages = Math.ceil(postsList.length / POSTS_PER_PAGE);
 
 export const generateStaticParams = () => {
   const pages = Array.from({ length: totalPages }, (_, index) => ({
-    page: [(index + 1).toString()],
+    page: ["page", (index + 1).toString()],
   }));
+
+  pages.unshift({ page: [] });
 
   return pages;
 };
