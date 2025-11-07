@@ -11,11 +11,11 @@ export const footerLinks: FooterLink[] = [
     external: true,
   },
   {
-    href: "/about",
-    label: "About",
+    href: "/404-page",
+    label: "404",
   },
   {
-    href: "/contact",
-    label: "Contact",
+    href: "/mastering-react-18-for-modern-web-performance",
+    label: "Article",
   },
 ];

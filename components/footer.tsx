@@ -53,7 +53,7 @@ export default function Footer() {
             href="#"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-foreground transition-transform hover:scale-110"
+            className="text-muted-foreground hover:text-accent-foreground transition-transform hover:scale-110"
           >
             <svg
               role="img"
@@ -70,7 +70,7 @@ export default function Footer() {
             href="#"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-foreground transition-transform hover:scale-110"
+            className="text-muted-foreground hover:text-accent-foreground transition-transform hover:scale-110"
           >
             <svg
               role="img"
@@ -87,7 +87,7 @@ export default function Footer() {
             href="https://github.com/mhsn013000"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-foreground transition-transform hover:scale-110"
+            className="text-muted-foreground hover:text-accent-foreground transition-transform hover:scale-110"
           >
             <svg
               role="img"
