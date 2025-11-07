@@ -1,6 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import Avatar from "./ui/avatar";
 import NewsletterEmail from "./newsletter-email";
+import { Toaster } from "sonner";
 
 export default function Hero() {
   return (
@@ -30,6 +31,7 @@ export default function Hero() {
           practical advice, and time-saving coding hacks every week!
         </p>
         <div className="mt-16 flex items-center justify-center gap-4">
+          <Toaster />
           <NewsletterEmail />
         </div>
       </div>
