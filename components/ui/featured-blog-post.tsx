@@ -25,7 +25,7 @@ export default function FeaturedBlogPost({ post }: { post: Post }) {
           </p>
         </div>
         <div className="flex items-center justify-between">
-          <span className="text-muted-foreground">{post.author}</span>
+          <span className="text-muted-foreground text-xs">{post.author}</span>
           <Link href={post.href} className="group flex items-center">
             Read More{" "}
             <ArrowRight className="ml-1 size-5 transition-transform group-hover:translate-x-1" />
