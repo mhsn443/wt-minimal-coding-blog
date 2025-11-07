@@ -9,9 +9,13 @@ export default function NewsletterEmail() {
   const [email, setEmail] = useState("");
   const id = useId();
 
-  const handleSubmitEmail = () => {
+  const isEmailValid = /\S+@\S+\.\S+/.test(email);
+
+  const handleSubmitEmail = (e: React.FormEvent) => {
+    e.preventDefault();
+
     // Basic validation: checks if email is valid
-    if (!email || !/\S+@\S+\.\S+/.test(email)) {
+    if (!email || !isEmailValid) {
       // Display error message if validation fails
       toast.error("Please enter a valid email.", {
         style: {

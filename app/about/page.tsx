@@ -12,14 +12,13 @@ export default function About() {
       >
         About
       </h1>
-      <p className="mx-auto mt-4 max-w-5xl text-center">
+      <p className="text-foreground/80 mx-auto mt-4 max-w-5xl text-center">
         We’re a team of developers who believe in simplicity, clarity, and
         purpose in code. This blog shares ideas, tutorials, and insights
         highlighting minimal, efficient, and thoughtful approaches to
         programming.
       </p>
-
-      <div className="mx-auto flex max-w-(--breakpoint-xl) flex-col justify-center gap-16 px-6 py-8 sm:py-12 lg:px-8">
+      <div className="mx-auto mt-10 flex max-w-(--breakpoint-xl) flex-col justify-center gap-16">
         <div className="grid w-full grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {teamMembers.map((member, index) => (
             <div key={index}>

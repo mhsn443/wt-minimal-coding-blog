@@ -30,9 +30,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="mx-auto flex min-h-dvh max-w-7xl flex-col justify-between">
+          <div className="mx-auto flex min-h-dvh max-w-7xl flex-col">
             <Header />
-            {children}
+            <div className="flex grow">{children}</div>
             <Footer />
           </div>
         </ThemeProvider>

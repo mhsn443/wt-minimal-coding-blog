@@ -13,7 +13,7 @@ export default function ShareYourThoughtsButton({
   name,
   comment,
 }: SonnerButtonProps) {
-  const handleSubmitMessage = () => {
+  const handleSubmitComment = () => {
     // Basic validation: checks if name or comment are empty
     if (!name || !comment) {
       // Display error message if validation fails
@@ -43,11 +43,7 @@ export default function ShareYourThoughtsButton({
   };
 
   return (
-    <Button
-      variant="outline"
-      className="mt-3 w-full"
-      onClick={handleSubmitMessage}
-    >
+    <Button className="mt-3 w-full" size="lg" onClick={handleSubmitComment}>
       Share Your Thoughts
     </Button>
   );

@@ -22,7 +22,7 @@ export default function NameInputWithAnimation({
       </label>
       <Input
         id={id}
-        type="email"
+        type="text"
         placeholder=" "
         value={value}
         onChange={onChange}

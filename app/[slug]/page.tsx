@@ -195,7 +195,9 @@ export default function SinglePost() {
           Your Thoughts
         </h2>
         <div className="mx-auto mt-8 max-w-4xl">
-          <CommentForm />
+          <div className="mx-auto max-w-3xl">
+            <CommentForm />
+          </div>
           <div className="mt-16">
             <CommentsDisplay comments={comments} postId={article.postId} />
           </div>
