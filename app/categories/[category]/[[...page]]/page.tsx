@@ -6,22 +6,29 @@ import { Separator } from "@/components/ui/separator";
 import { postsList } from "@/data/posts-list";
 import { notFound, redirect, useParams } from "next/navigation";
 
-export default function Blog() {
+export default function CategoryPosts() {
   const params = useParams();
+  const category = params.category;
 
   if (params.page && params.page?.[0] !== "page") notFound();
 
   if (Number(params.page?.[1]) === 1) {
-    redirect("/blog");
+    redirect(`/categories/${category}`);
   }
+
+  const filteredPosts = postsList.filter(
+    (post) => post.category.slug === category,
+  );
+
+  if (!filteredPosts.length) notFound();
 
   const page = params.page ? Number(params.page[1]) : 1;
   const POSTS_PER_PAGE = 8;
 
-  const totalPages = Math.ceil(postsList.length / POSTS_PER_PAGE);
+  const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
 
   const startIndex = (page - 1) * POSTS_PER_PAGE;
-  const currentPostsList = postsList.slice(
+  const currentPostsList = filteredPosts.slice(
     startIndex,
     startIndex + POSTS_PER_PAGE,
   );
@@ -47,7 +54,7 @@ export default function Blog() {
       <PostsListPagination
         currentPage={page}
         totalPages={totalPages}
-        basePath="/blog"
+        basePath={`/categories/${category}`}
       />
     </main>
   );

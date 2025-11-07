@@ -16,14 +16,18 @@ type PaginationProps = {
   currentPage: number;
   totalPages: number;
   paginationItemsToDisplay?: number;
+  basePath: string;
 };
 
-export default function BlogPagination({
+export default function PostsListPagination({
   currentPage,
   totalPages,
   paginationItemsToDisplay = 5,
+  basePath,
 }: PaginationProps) {
   const id = useId();
+
+  if (totalPages <= 1) return null;
 
   const { pages, showLeftEllipsis, showRightEllipsis } = usePagination({
     currentPage,
@@ -43,8 +47,8 @@ export default function BlogPagination({
                 className="aria-disabled:pointer-events-none aria-disabled:opacity-50"
                 href={
                   currentPage - 1 === 1
-                    ? "/blog"
-                    : `/blog/page/${currentPage - 1}`
+                    ? basePath
+                    : `${basePath}/page/${currentPage - 1}`
                 }
                 aria-label="Go to previous page"
                 aria-disabled={currentPage === 1 ? true : undefined}
@@ -65,7 +69,7 @@ export default function BlogPagination({
             {pages.map((page) => (
               <PaginationItem key={page}>
                 <PaginationLink
-                  href={page === 1 ? "/blog" : `/blog/page/${page}`}
+                  href={page === 1 ? basePath : `${basePath}/page/${page}`}
                   isActive={page === currentPage}
                 >
                   {page}
@@ -87,7 +91,7 @@ export default function BlogPagination({
                 href={
                   currentPage === totalPages
                     ? "#"
-                    : `/blog/page/${currentPage + 1}`
+                    : `${basePath}/page/${currentPage + 1}`
                 }
                 aria-label="Go to next page"
                 aria-disabled={currentPage === totalPages ? true : undefined}

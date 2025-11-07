@@ -31,7 +31,11 @@ export const post: Post[] = [
     title: "Mastering React 18 for Modern Web Performance",
     date: "October 1, 2025",
     author: "Sophia Brown",
-    category: { name: "Frontend", href: "#" },
+    category: {
+      name: "Frontend",
+      href: "/categories/frontend",
+      slug: "frontend",
+    },
     content: [
       {
         type: "p",
