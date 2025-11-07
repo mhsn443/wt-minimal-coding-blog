@@ -1,24 +1,5 @@
-"use client";
-
 import { post } from "@/data/post";
 import { Quote } from "lucide-react";
-import { useParams } from "next/navigation";
-import type { BundledLanguage } from "@/components/ui";
-import {
-  CodeBlock,
-  CodeBlockBody,
-  CodeBlockContent,
-  CodeBlockCopyButton,
-  CodeBlockFilename,
-  CodeBlockFiles,
-  CodeBlockHeader,
-  CodeBlockItem,
-  CodeBlockSelect,
-  CodeBlockSelectContent,
-  CodeBlockSelectItem,
-  CodeBlockSelectTrigger,
-  CodeBlockSelectValue,
-} from "@/components/ui";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
@@ -31,10 +12,22 @@ import ShareOnRedditButton from "@/components/ui/share-on-reddit-button";
 import CommentForm from "@/components/comment-form";
 import CommentsDisplay from "@/components/comments-display";
 import { comments } from "@/data/comment";
+import CustomCodeBlock from "@/components/ui/custom-code-block";
 
-export default function SinglePost() {
-  const params = useParams();
-  const article = post.find((p) => p.slug === params.slug) || notFound();
+type StaticParams = {
+  slug: string;
+};
+
+export const generateStaticParams = () => {
+  return post.map((p) => ({
+    slug: p.slug,
+  }));
+};
+
+export default async function SinglePost({ params }: { params: StaticParams }) {
+  const url = await params;
+
+  const article = post.find((p) => p.slug === url.slug) || notFound();
 
   return (
     <main className="mx-auto mt-20 max-w-5xl">
@@ -115,61 +108,10 @@ export default function SinglePost() {
                   </blockquote>
                 );
               case "code":
+                if (!block.code) return null;
                 return (
                   <div key={index} className="my-5">
-                    <CodeBlock
-                      data={block.code ?? []}
-                      defaultValue={block.code?.[0].language ?? "ts"}
-                      className=""
-                    >
-                      <CodeBlockHeader>
-                        <CodeBlockFiles>
-                          {(item) => (
-                            <CodeBlockFilename
-                              key={item.language}
-                              value={item.language}
-                            >
-                              {item.filename}
-                            </CodeBlockFilename>
-                          )}
-                        </CodeBlockFiles>
-                        <CodeBlockSelect>
-                          <CodeBlockSelectTrigger>
-                            <CodeBlockSelectValue />
-                          </CodeBlockSelectTrigger>
-                          <CodeBlockSelectContent>
-                            {(item) => (
-                              <CodeBlockSelectItem
-                                key={item.language}
-                                value={item.language}
-                              >
-                                {item.language}
-                              </CodeBlockSelectItem>
-                            )}
-                          </CodeBlockSelectContent>
-                        </CodeBlockSelect>
-                        <CodeBlockCopyButton
-                          onCopy={() => console.log("Copied code to clipboard")}
-                          onError={() =>
-                            console.error("Failed to copy code to clipboard")
-                          }
-                        />
-                      </CodeBlockHeader>
-                      <CodeBlockBody>
-                        {(item) => (
-                          <CodeBlockItem
-                            key={item.language}
-                            value={item.language}
-                          >
-                            <CodeBlockContent
-                              language={item.language as BundledLanguage}
-                            >
-                              {item.code}
-                            </CodeBlockContent>
-                          </CodeBlockItem>
-                        )}
-                      </CodeBlockBody>
-                    </CodeBlock>
+                    <CustomCodeBlock data={block.code} />
                   </div>
                 );
               default:

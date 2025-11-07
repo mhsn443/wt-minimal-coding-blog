@@ -11,7 +11,7 @@ export default function ShareOnXButton() {
   }, []);
 
   const text = encodeURIComponent("Check this out!");
-  const shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+  const shareUrl = `https://x.com/intent/tweet?url=${url}&text=${text}`;
 
   return (
     <Button asChild variant="outline" disabled={!url}>
