@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { categories, featuredCategories } from "@/data/category";
+import { categories } from "@/data/category";
+import { featuredCategories } from "@/data/featured-category";
 import { BadgeCheckIcon, ChevronRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 

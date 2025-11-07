@@ -47,26 +47,3 @@ export const categories: Category[] = [
     slug: "cloud",
   },
 ];
-
-export const featuredCategories: Category[] = [
-  {
-    name: "Trending Now",
-    href: "/categories/trending-now",
-    slug: "trending-now",
-  },
-  {
-    name: "Community Picks",
-    href: "/categories/community-picks",
-    slug: "community-picks",
-  },
-  {
-    name: "Pro Tips",
-    href: "/categories/pro-tips",
-    slug: "pro-tips",
-  },
-  {
-    name: "Deep Dives",
-    href: "/categories/deep-dives",
-    slug: "deep-dives",
-  },
-];

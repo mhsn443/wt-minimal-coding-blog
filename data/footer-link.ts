@@ -10,6 +10,12 @@ export const footerLinks: FooterLink[] = [
     label: "Who is Imam Mahdi (a.j.)?",
     external: true,
   },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  {
+    href: "/about",
+    label: "About",
+  },
+  {
+    href: "/contact",
+    label: "Contact",
+  },
 ];

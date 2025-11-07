@@ -5,10 +5,16 @@ import BlogPost from "@/components/ui/blog-post";
 import { Separator } from "@/components/ui/separator";
 import { postsList } from "@/data/posts-list";
 import { notFound, redirect, useParams } from "next/navigation";
+import { categories } from "@/data/category";
+import { featuredCategories } from "@/data/featured-category";
 
 export default function CategoryPosts() {
   const params = useParams();
-  const category = params.category;
+  const category = params.category as string;
+
+  const allCategories = categories.concat(featuredCategories);
+  const pageTitle =
+    allCategories.find((item) => item.slug === category)?.name || "";
 
   if (params.page && params.page?.[0] !== "page") notFound();
 
@@ -16,9 +22,15 @@ export default function CategoryPosts() {
     redirect(`/categories/${category}`);
   }
 
-  const filteredPosts = postsList.filter(
-    (post) => post.category.slug === category,
+  let filteredPosts = postsList.filter((post) =>
+    post.featuredCategories?.some(
+      (featuredCategory) => featuredCategory.slug === category,
+    ),
   );
+
+  if (filteredPosts.length === 0) {
+    filteredPosts = postsList.filter((post) => post.category.slug === category);
+  }
 
   if (!filteredPosts.length) notFound();
 
@@ -39,7 +51,7 @@ export default function CategoryPosts() {
         className="text-center font-semibold tracking-tighter md:leading-[1.2]"
         style={{ fontSize: "clamp(2rem, 1.4rem + 2vw, 3rem)" }}
       >
-        Blog
+        {pageTitle}
       </h1>
       <div className="mt-4">
         {currentPostsList.map((postList, index) => (

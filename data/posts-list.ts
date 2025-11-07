@@ -1,3 +1,5 @@
+import type { FeaturedCategory } from "./featured-category";
+
 export type Category = {
   name: string;
   href: string;
@@ -12,7 +14,7 @@ export type PostList = {
   date: string;
   author: string;
   category: Category;
-  featuredCategories?: string[];
+  featuredCategories?: FeaturedCategory[];
 };
 
 export const postsList: PostList[] = [
@@ -29,7 +31,20 @@ export const postsList: PostList[] = [
       href: "/categories/frontend",
       slug: "frontend",
     },
-    featuredCategories: ["Trending Now", "Pro Tips"],
+    featuredCategories: [
+      {
+        name: "Trending Now",
+        value: "Trending Now",
+        href: "/categories/trending-now",
+        slug: "trending-now",
+      },
+      {
+        name: "Pro Tips",
+        value: "Pro Tips",
+        href: "/categories/pro-tips",
+        slug: "pro-tips",
+      },
+    ],
   },
   {
     id: 2,
@@ -58,7 +73,20 @@ export const postsList: PostList[] = [
       href: "/categories/mobile",
       slug: "mobile",
     },
-    featuredCategories: ["Community Picks", "Trending Now"],
+    featuredCategories: [
+      {
+        name: "Community Picks",
+        value: "Community Picks",
+        href: "/categories/community-picks",
+        slug: "community-picks",
+      },
+      {
+        name: "Trending Now",
+        value: "Trending Now",
+        href: "/categories/trending-now",
+        slug: "trending-now",
+      },
+    ],
   },
   {
     id: 4,
@@ -101,7 +129,14 @@ export const postsList: PostList[] = [
       href: "/categories/devops",
       slug: "devops",
     },
-    featuredCategories: ["Pro Tips"],
+    featuredCategories: [
+      {
+        name: "Pro Tips",
+        value: "Pro Tips",
+        href: "/categories/pro-tips",
+        slug: "pro-tips",
+      },
+    ],
   },
   {
     id: 7,
@@ -144,7 +179,20 @@ export const postsList: PostList[] = [
       href: "/categories/devops",
       slug: "devops",
     },
-    featuredCategories: ["Pro Tips", "Trending Now"],
+    featuredCategories: [
+      {
+        name: "Pro Tips",
+        value: "Pro Tips",
+        href: "/categories/pro-tips",
+        slug: "pro-tips",
+      },
+      {
+        name: "Trending Now",
+        value: "Trending Now",
+        href: "/categories/trending-now",
+        slug: "trending-now",
+      },
+    ],
   },
   {
     id: 10,
@@ -173,7 +221,20 @@ export const postsList: PostList[] = [
       href: "/categories/backend",
       slug: "backend",
     },
-    featuredCategories: ["Deep Dives", "Pro Tips"],
+    featuredCategories: [
+      {
+        name: "Deep Dives",
+        value: "Deep Dives",
+        href: "/categories/deep-dives",
+        slug: "deep-dives",
+      },
+      {
+        name: "Pro Tips",
+        value: "Pro Tips",
+        href: "/categories/pro-tips",
+        slug: "pro-tips",
+      },
+    ],
   },
   {
     id: 12,
@@ -202,7 +263,14 @@ export const postsList: PostList[] = [
       href: "/categories/devops",
       slug: "devops",
     },
-    featuredCategories: ["Deep Dives"],
+    featuredCategories: [
+      {
+        name: "Deep Dives",
+        value: "Deep Dives",
+        href: "/categories/deep-dives",
+        slug: "deep-dives",
+      },
+    ],
   },
   {
     id: 14,
@@ -301,7 +369,20 @@ export const postsList: PostList[] = [
       href: "/categories/frontend",
       slug: "frontend",
     },
-    featuredCategories: ["Pro Tips", "Community Picks"],
+    featuredCategories: [
+      {
+        name: "Pro Tips",
+        value: "Pro Tips",
+        href: "/categories/pro-tips",
+        slug: "pro-tips",
+      },
+      {
+        name: "Community Picks",
+        value: "Community Picks",
+        href: "/categories/community-picks",
+        slug: "community-picks",
+      },
+    ],
   },
   {
     id: 21,
@@ -316,7 +397,20 @@ export const postsList: PostList[] = [
       href: "/categories/devops",
       slug: "devops",
     },
-    featuredCategories: ["Deep Dives", "Pro Tips"],
+    featuredCategories: [
+      {
+        name: "Deep Dives",
+        value: "Deep Dives",
+        href: "/categories/deep-dives",
+        slug: "deep-dives",
+      },
+      {
+        name: "Pro Tips",
+        value: "Pro Tips",
+        href: "/categories/pro-tips",
+        slug: "pro-tips",
+      },
+    ],
   },
   {
     id: 22,
@@ -331,7 +425,20 @@ export const postsList: PostList[] = [
       href: "/categories/full-stack",
       slug: "full-stack",
     },
-    featuredCategories: ["Trending Now", "Community Picks"],
+    featuredCategories: [
+      {
+        name: "Trending Now",
+        value: "Trending Now",
+        href: "/categories/trending-now",
+        slug: "trending-now",
+      },
+      {
+        name: "Community Picks",
+        value: "Community Picks",
+        href: "/categories/community-picks",
+        slug: "community-picks",
+      },
+    ],
   },
   {
     id: 23,
@@ -374,7 +481,20 @@ export const postsList: PostList[] = [
       href: "/categories/data-science",
       slug: "data-science",
     },
-    featuredCategories: ["Community Picks", "Pro Tips"],
+    featuredCategories: [
+      {
+        name: "Community Picks",
+        value: "Community Picks",
+        href: "/categories/community-picks",
+        slug: "community-picks",
+      },
+      {
+        name: "Pro Tips",
+        value: "Pro Tips",
+        href: "/categories/pro-tips",
+        slug: "pro-tips",
+      },
+    ],
   },
   {
     id: 26,
@@ -389,7 +509,20 @@ export const postsList: PostList[] = [
       href: "/categories/ai",
       slug: "ai",
     },
-    featuredCategories: ["Deep Dives", "Trending Now"],
+    featuredCategories: [
+      {
+        name: "Deep Dives",
+        value: "Deep Dives",
+        href: "/categories/deep-dives",
+        slug: "deep-dives",
+      },
+      {
+        name: "Trending Now",
+        value: "Trending Now",
+        href: "/categories/trending-now",
+        slug: "trending-now",
+      },
+    ],
   },
   {
     id: 27,
@@ -446,7 +579,20 @@ export const postsList: PostList[] = [
       href: "/categories/backend",
       slug: "backend",
     },
-    featuredCategories: ["Trending Now", "Deep Dives"],
+    featuredCategories: [
+      {
+        name: "Trending Now",
+        value: "Trending Now",
+        href: "/categories/trending-now",
+        slug: "trending-now",
+      },
+      {
+        name: "Deep Dives",
+        value: "Deep Dives",
+        href: "/categories/deep-dives",
+        slug: "deep-dives",
+      },
+    ],
   },
   {
     id: 31,
@@ -503,7 +649,14 @@ export const postsList: PostList[] = [
       href: "/categories/devops",
       slug: "devops",
     },
-    featuredCategories: ["Community Picks"],
+    featuredCategories: [
+      {
+        name: "Community Picks",
+        value: "Community Picks",
+        href: "/categories/community-picks",
+        slug: "community-picks",
+      },
+    ],
   },
   {
     id: 35,
@@ -518,7 +671,14 @@ export const postsList: PostList[] = [
       href: "/categories/backend",
       slug: "backend",
     },
-    featuredCategories: ["Deep Dives"],
+    featuredCategories: [
+      {
+        name: "Deep Dives",
+        value: "Deep Dives",
+        href: "/categories/deep-dives",
+        slug: "deep-dives",
+      },
+    ],
   },
   {
     id: 36,
@@ -561,7 +721,14 @@ export const postsList: PostList[] = [
       href: "/categories/frontend",
       slug: "frontend",
     },
-    featuredCategories: ["Pro Tips"],
+    featuredCategories: [
+      {
+        name: "Pro Tips",
+        value: "Pro Tips",
+        href: "/categories/pro-tips",
+        slug: "pro-tips",
+      },
+    ],
   },
   {
     id: 39,
@@ -590,7 +757,20 @@ export const postsList: PostList[] = [
       href: "/categories/database",
       slug: "database",
     },
-    featuredCategories: ["Deep Dives", "Pro Tips"],
+    featuredCategories: [
+      {
+        name: "Deep Dives",
+        value: "Deep Dives",
+        href: "/categories/deep-dives",
+        slug: "deep-dives",
+      },
+      {
+        name: "Pro Tips",
+        value: "Pro Tips",
+        href: "/categories/pro-tips",
+        slug: "pro-tips",
+      },
+    ],
   },
   {
     id: 41,
@@ -619,7 +799,14 @@ export const postsList: PostList[] = [
       href: "/categories/cloud",
       slug: "cloud",
     },
-    featuredCategories: ["Deep Dives"],
+    featuredCategories: [
+      {
+        name: "Deep Dives",
+        value: "Deep Dives",
+        href: "/categories/deep-dives",
+        slug: "deep-dives",
+      },
+    ],
   },
   {
     id: 43,
@@ -634,7 +821,20 @@ export const postsList: PostList[] = [
       href: "/categories/ai",
       slug: "ai",
     },
-    featuredCategories: ["Trending Now", "Pro Tips"],
+    featuredCategories: [
+      {
+        name: "Trending Now",
+        value: "Trending Now",
+        href: "/categories/trending-now",
+        slug: "trending-now",
+      },
+      {
+        name: "Pro Tips",
+        value: "Pro Tips",
+        href: "/categories/pro-tips",
+        slug: "pro-tips",
+      },
+    ],
   },
   {
     id: 44,
@@ -677,7 +877,14 @@ export const postsList: PostList[] = [
       href: "/categories/frontend",
       slug: "frontend",
     },
-    featuredCategories: ["Pro Tips"],
+    featuredCategories: [
+      {
+        name: "Pro Tips",
+        value: "Pro Tips",
+        href: "/categories/pro-tips",
+        slug: "pro-tips",
+      },
+    ],
   },
   {
     id: 47,
@@ -706,6 +913,13 @@ export const postsList: PostList[] = [
       href: "/categories/frontend",
       slug: "frontend",
     },
-    featuredCategories: ["Trending Now"],
+    featuredCategories: [
+      {
+        name: "Trending Now",
+        value: "Trending Now",
+        href: "/categories/trending-now",
+        slug: "trending-now",
+      },
+    ],
   },
 ];

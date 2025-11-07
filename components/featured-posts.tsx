@@ -1,5 +1,5 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { featuredCategories } from "@/data/featured-categories";
+import { featuredCategories } from "@/data/featured-category";
 import { FeaturedPostsCarousel } from "./ui/featured-posts-carousel";
 
 export default function FeaturedPosts() {

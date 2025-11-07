@@ -2,27 +2,32 @@ export type FeaturedCategory = {
   name: string;
   value: string;
   href: string;
+  slug: string;
 };
 
 export const featuredCategories: FeaturedCategory[] = [
   {
     name: "Trending Now",
     value: "Trending Now",
-    href: "#",
+    href: "/categories/trending-now",
+    slug: "trending-now",
   },
   {
     name: "Community Picks",
     value: "Community Picks",
-    href: "#",
+    href: "/categories/community-picks",
+    slug: "community-picks",
   },
   {
     name: "Pro Tips",
     value: "Pro Tips",
-    href: "#",
+    href: "/categories/pro-tips",
+    slug: "pro-tips",
   },
   {
     name: "Deep Dives",
     value: "Deep Dives",
-    href: "#",
+    href: "/categories/deep-dives",
+    slug: "deep-dives",
   },
 ];

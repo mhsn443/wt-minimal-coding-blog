@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/carousel";
 import { postsList } from "@/data/posts-list";
 import Link from "next/link";
-import type { FeaturedCategory } from "@/data/featured-categories";
+import type { FeaturedCategory } from "@/data/featured-category";
 import FeaturedBlogPost from "./featured-blog-post";
 
 const defaultCarouselOptions = {
@@ -58,8 +58,10 @@ export function FeaturedPostsCarousel({
         <Carousel setApi={setCarouselApi} opts={defaultCarouselOptions}>
           <CarouselContent>
             {postsList
-              .filter((postList) =>
-                postList.featuredCategories?.includes(featuredCategory.name),
+              .filter((post) =>
+                post.featuredCategories?.some(
+                  (item) => item.name === featuredCategory.name,
+                ),
               )
               .slice(0, 6)
               .map((postList) => (

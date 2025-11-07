@@ -1,5 +1,5 @@
 import Logo from "./ui/logo";
-import { footerLinks } from "@/data/footer-links";
+import { footerLinks } from "@/data/footer-link";
 import {
   NavigationMenu,
   NavigationMenuItem,
