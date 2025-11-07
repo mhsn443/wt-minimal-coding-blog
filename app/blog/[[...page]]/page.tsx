@@ -9,6 +9,7 @@ import { notFound, redirect, useParams } from "next/navigation";
 export default function Blog() {
   const params = useParams();
 
+  // Show 404 error if the page parameter exists but is not "page"
   if (params.page && params.page?.[0] !== "page") notFound();
 
   if (Number(params.page?.[1]) === 1) {
@@ -19,6 +20,9 @@ export default function Blog() {
   const POSTS_PER_PAGE = 8;
 
   const totalPages = Math.ceil(postsList.length / POSTS_PER_PAGE);
+
+  // Show 404 error if the page number is invalid or out of range
+  if (isNaN(page) || page > totalPages) notFound();
 
   const startIndex = (page - 1) * POSTS_PER_PAGE;
   const currentPostsList = postsList.slice(

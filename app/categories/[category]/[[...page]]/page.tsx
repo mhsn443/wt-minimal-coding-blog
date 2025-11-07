@@ -16,6 +16,7 @@ export default function CategoryPosts() {
   const pageTitle =
     allCategories.find((item) => item.slug === category)?.name || "";
 
+  // Show 404 error if the page parameter exists but is not "page"
   if (params.page && params.page?.[0] !== "page") notFound();
 
   if (Number(params.page?.[1]) === 1) {
@@ -32,12 +33,16 @@ export default function CategoryPosts() {
     filteredPosts = postsList.filter((post) => post.category.slug === category);
   }
 
+  // Show 404 error if no posts are found or category doesn't exist
   if (!filteredPosts.length) notFound();
 
   const page = params.page ? Number(params.page[1]) : 1;
   const POSTS_PER_PAGE = 8;
 
   const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
+
+  // Show 404 if the page number is invalid or out of range
+  if (isNaN(page) || page > totalPages) notFound();
 
   const startIndex = (page - 1) * POSTS_PER_PAGE;
   const currentPostsList = filteredPosts.slice(
