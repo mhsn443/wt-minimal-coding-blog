@@ -3,18 +3,11 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import type { Post } from "@/data/posts";
-import { Separator } from "./separator";
 
-export default function BlogPost({
-  post,
-  isLast,
-}: {
-  post: Post;
-  isLast: boolean;
-}) {
+export default function FeaturedBlogPost({ post }: { post: Post }) {
   return (
-    <Card className="mx-auto max-w-5xl gap-y-2 border-none shadow-none">
-      <CardHeader className="flex items-center justify-between px-0">
+    <Card className="min-h-[356px] gap-y-3 p-5 shadow-none">
+      <CardHeader className="flex items-center justify-between border-b px-0 !pb-4">
         <span className="text-muted-foreground flex items-center gap-x-1.5 text-xs">
           {post.date}
         </span>
@@ -31,7 +24,7 @@ export default function BlogPost({
             {post.summary}
           </p>
         </div>
-        <div className="mt-12 flex items-center justify-between">
+        <div className="flex items-center justify-between">
           <span className="text-muted-foreground">{post.author}</span>
           <Link href={post.href} className="group flex items-center">
             Read More{" "}
@@ -39,7 +32,6 @@ export default function BlogPost({
           </Link>
         </div>
       </CardContent>
-      {!isLast && <Separator className="mt-10" />}
     </Card>
   );
 }

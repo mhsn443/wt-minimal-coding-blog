@@ -13,7 +13,7 @@ import {
 import { posts } from "@/data/posts";
 import Link from "next/link";
 import type { FeaturedCategory } from "@/data/featured-categories";
-import BlogPost from "./blog-post";
+import FeaturedBlogPost from "./featured-blog-post";
 
 const defaultCarouselOptions = {
   align: "start" as const,
@@ -67,7 +67,7 @@ export function FeaturedPostsCarousel({
                   key={post.id}
                   className="pl-5 md:basis-1/2 lg:basis-1/3"
                 >
-                  <BlogPost post={post} />
+                  <FeaturedBlogPost post={post} />
                 </CarouselItem>
               ))}
           </CarouselContent>

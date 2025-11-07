@@ -5,7 +5,7 @@ import NewsletterEmail from "./newsletter-email";
 
 export default function Hero() {
   return (
-    <div className="mt-20 flex items-center justify-center">
+    <section className="mt-20 flex items-center justify-center">
       <div className="flex max-w-4xl flex-col items-center text-center">
         <Badge
           variant="secondary"
@@ -34,6 +34,6 @@ export default function Hero() {
           <NewsletterEmail />
         </div>
       </div>
-    </div>
+    </section>
   );
 }
