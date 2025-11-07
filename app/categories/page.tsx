@@ -25,7 +25,10 @@ export default function Categories() {
               variant="outline"
               className="relative flex h-32 w-full cursor-pointer justify-between rounded-xl p-6 text-base"
             >
-              <Badge variant="secondary" className="absolute top-6 right-6">
+              <Badge
+                variant="secondary"
+                className="custom-rounded-full absolute top-6 right-6"
+              >
                 <BadgeCheckIcon /> Featured
               </Badge>
               <span className="self-end">{featuredCategory.name}</span>

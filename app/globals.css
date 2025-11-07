@@ -115,6 +115,7 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    border-radius: 0 !important;
   }
 
   body {
@@ -132,5 +133,9 @@
   p a {
     text-decoration: underline;
     text-underline-offset: 4px;
+  }
+
+  .custom-rounded-full {
+    border-radius: 100px !important;
   }
 }

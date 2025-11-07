@@ -92,7 +92,7 @@ export default function Header() {
                   <NavigationMenuItem key={index}>
                     <NavigationMenuLink
                       asChild
-                      className="hover:text-primary py-1.5"
+                      className="py-1.5"
                       active={link.href === pathname}
                     >
                       <Link href={link.href}>{link.label}</Link>

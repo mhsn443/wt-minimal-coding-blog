@@ -27,7 +27,7 @@ export default function Footer() {
                   : ""
               }
             >
-              <NavigationMenuLink asChild className="hover:text-primary py-1.5">
+              <NavigationMenuLink asChild className="py-1.5">
                 {/* One link is external, so target="_blank" and rel="noopener noreferrer" are set conditionally.
                 Remove them if all links are internal. */}
                 <Link

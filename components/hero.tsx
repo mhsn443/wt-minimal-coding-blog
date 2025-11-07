@@ -9,7 +9,7 @@ export default function Hero() {
       <div className="flex max-w-4xl flex-col items-center text-center">
         <Badge
           variant="secondary"
-          className="border-border rounded-full py-1"
+          className="custom-rounded-full border-border rounded-full py-1"
           asChild
         >
           <div>
