@@ -10,7 +10,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
-import { posts } from "@/data/posts";
+import { postsList } from "@/data/posts-list";
 import Link from "next/link";
 import type { FeaturedCategory } from "@/data/featured-categories";
 import FeaturedBlogPost from "./featured-blog-post";
@@ -53,21 +53,21 @@ export function FeaturedPostsCarousel({
   }, [carouselApi]);
 
   return (
-    <section className="mt-4">
+    <div className="mt-4">
       <div className="overflow-hidden">
         <Carousel setApi={setCarouselApi} opts={defaultCarouselOptions}>
           <CarouselContent>
-            {posts
-              .filter((post) =>
-                post.featuredCategories?.includes(featuredCategory.name),
+            {postsList
+              .filter((postList) =>
+                postList.featuredCategories?.includes(featuredCategory.name),
               )
               .slice(0, 6)
-              .map((post) => (
+              .map((postList) => (
                 <CarouselItem
-                  key={post.id}
+                  key={postList.id}
                   className="pl-5 md:basis-1/2 lg:basis-1/3"
                 >
-                  <FeaturedBlogPost post={post} />
+                  <FeaturedBlogPost postList={postList} />
                 </CarouselItem>
               ))}
           </CarouselContent>
@@ -103,6 +103,6 @@ export function FeaturedPostsCarousel({
           </Link>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

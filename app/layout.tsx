@@ -23,18 +23,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${firaCode.variable} mx-auto flex min-h-dvh max-w-[1312px] flex-col justify-between px-4 antialiased`}
-      >
+      <body className={`${firaCode.variable} mx-4 antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <Header />
-          {children}
-          <Footer />
+          <div className="mx-auto flex min-h-dvh max-w-7xl flex-col justify-between">
+            <Header />
+            {children}
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>

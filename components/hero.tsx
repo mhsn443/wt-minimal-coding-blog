@@ -1,5 +1,4 @@
 import { Badge } from "@/components/ui/badge";
-import Link from "next/link";
 import Avatar from "./ui/avatar";
 import NewsletterEmail from "./newsletter-email";
 
@@ -12,9 +11,9 @@ export default function Hero() {
           className="border-border rounded-full py-1"
           asChild
         >
-          <Link href="#">
+          <div>
             <Avatar /> Join 10,000+ Coding Enthusiasts
-          </Link>
+          </div>
         </Badge>
         <h1
           className="mt-6 font-semibold tracking-tighter md:leading-[1.2]"

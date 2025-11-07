@@ -1,9 +1,9 @@
 "use client";
 
-import BlogPagination from "@/components/blog-pagination";
+import BlogPagination from "@/components/ui/blog-pagination";
 import BlogPost from "@/components/ui/blog-post";
 import { Separator } from "@/components/ui/separator";
-import { posts } from "@/data/posts";
+import { postsList } from "@/data/posts-list";
 import { useParams } from "next/navigation";
 
 export default function Blog() {
@@ -12,10 +12,13 @@ export default function Blog() {
   const page = params.page ? Number(params.page[1]) : 1;
   const POSTS_PER_PAGE = 8;
 
-  const totalPages = Math.ceil(posts.length / POSTS_PER_PAGE);
+  const totalPages = Math.ceil(postsList.length / POSTS_PER_PAGE);
 
   const startIndex = (page - 1) * POSTS_PER_PAGE;
-  const currentPosts = posts.slice(startIndex, startIndex + POSTS_PER_PAGE);
+  const currentPostsList = postsList.slice(
+    startIndex,
+    startIndex + POSTS_PER_PAGE,
+  );
 
   return (
     <main>
@@ -26,10 +29,10 @@ export default function Blog() {
         Blog
       </h1>
       <div className="mt-4">
-        {currentPosts.map((post, index) => (
-          <div key={post.id}>
-            <BlogPost post={post} />
-            {index !== currentPosts.length - 1 && (
+        {currentPostsList.map((postList, index) => (
+          <div key={postList.id}>
+            <BlogPost postList={postList} />
+            {index !== currentPostsList.length - 1 && (
               <Separator className="mx-auto my-7 max-w-5xl" />
             )}
           </div>
