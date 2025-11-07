@@ -27,6 +27,8 @@ export default function About() {
                 className="aspect-square w-full rounded-lg object-cover grayscale transition-all duration-700 hover:grayscale-0"
                 width={600}
                 height={600}
+                loading="lazy"
+                decoding="async"
               />
               <h3 className="mt-4 text-lg font-semibold">{member.name}</h3>
               <p className="text-muted-foreground text-sm">{member.field}</p>

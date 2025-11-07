@@ -45,7 +45,8 @@ export default function Footer() {
       <Separator className="my-2" />
       <div className="flex w-full flex-col-reverse items-center justify-between gap-y-2 md:flex-row">
         <p className="text-muted-foreground text-xs">
-          Minimal Coding Blog Template. Free under "The Unlicensed" license.
+          Minimal Coding Blog Template. Free under &quot;The Unlicensed&quot;
+          license.
         </p>
         {/* Social Media Platforms */}
         <div className="flex gap-x-4">

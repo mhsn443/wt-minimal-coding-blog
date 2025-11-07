@@ -7,6 +7,8 @@ export default function Avatar() {
         width={20}
         height={20}
         alt="Avatar 01"
+        loading="lazy"
+        decoding="async"
       />
       <img
         className="custom-rounded-full ring-background ring-1"
@@ -14,6 +16,8 @@ export default function Avatar() {
         width={20}
         height={20}
         alt="Avatar 02"
+        loading="lazy"
+        decoding="async"
       />
       <img
         className="custom-rounded-full ring-background ring-1"
@@ -21,6 +25,8 @@ export default function Avatar() {
         width={20}
         height={20}
         alt="Avatar 03"
+        loading="lazy"
+        decoding="async"
       />
       <img
         className="custom-rounded-full ring-background ring-1"
@@ -28,6 +34,8 @@ export default function Avatar() {
         width={20}
         height={20}
         alt="Avatar 04"
+        loading="lazy"
+        decoding="async"
       />
     </div>
   );

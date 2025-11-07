@@ -1,14 +1,10 @@
-"use client";
-
-import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 
 export default function ShareOnRedditButton() {
-  const [url, setUrl] = useState("");
-
-  useEffect(() => {
-    setUrl(encodeURIComponent(window.location.href));
-  }, []);
+  const url =
+    typeof window !== "undefined"
+      ? encodeURIComponent(window.location.href)
+      : "";
 
   const title = encodeURIComponent("Check this out!");
   const shareUrl = `https://www.reddit.com/submit?url=${url}&title=${title}`;

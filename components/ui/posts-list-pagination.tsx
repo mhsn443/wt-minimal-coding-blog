@@ -27,13 +27,13 @@ export default function PostsListPagination({
 }: PaginationProps) {
   const id = useId();
 
-  if (totalPages <= 1) return null;
-
   const { pages, showLeftEllipsis, showRightEllipsis } = usePagination({
     currentPage,
     totalPages,
     paginationItemsToDisplay,
   });
+
+  if (totalPages <= 1) return null;
 
   return (
     <div className="mt-4 flex flex-col items-center justify-center gap-x-8 gap-y-4 sm:flex-row">
