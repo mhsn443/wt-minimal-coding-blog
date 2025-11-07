@@ -32,7 +32,7 @@ export default function RootLayout({
         >
           <div className="mx-auto flex min-h-dvh max-w-7xl flex-col">
             <Header />
-            <div className="flex grow">{children}</div>
+            <div className="flex grow flex-col">{children}</div>
             <Footer />
           </div>
         </ThemeProvider>

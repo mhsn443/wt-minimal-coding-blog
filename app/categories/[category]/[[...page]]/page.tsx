@@ -10,6 +10,7 @@ import { featuredCategories } from "@/data/featured-category";
 
 export default function CategoryPosts() {
   const params = useParams();
+  console.log(params);
   const category = params.category as string;
 
   const allCategories = categories.concat(featuredCategories);

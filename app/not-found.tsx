@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <section className="mx-auto flex max-w-md flex-col items-center justify-center text-center">
+    <section className="mx-auto flex max-w-md grow flex-col items-center justify-center text-center">
       <h1 className="text-9xl font-bold">404</h1>
       <p className="text-3xl">Page Not Found</p>
       <p className="text-muted-foreground mt-2">
