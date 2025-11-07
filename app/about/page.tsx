@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { teamMembers } from "@/data/team-members";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function About() {
@@ -22,7 +21,7 @@ export default function About() {
         <div className="grid w-full grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {teamMembers.map((member, index) => (
             <div key={index}>
-              <Image
+              <img
                 src={member.image}
                 alt={member.name}
                 className="aspect-square w-full rounded-lg object-cover grayscale transition-all duration-700 hover:grayscale-0"

@@ -14,7 +14,7 @@ type TeamMembers = {
 
 export const teamMembers: TeamMembers[] = [
   {
-    image: "/member-avatar-01.webp",
+    image: "./member-avatar-01.webp",
     name: "Sophia Brown",
     field: "Frontend Developer",
     quote: "I create clean, responsive, and accessible web designs.",
@@ -25,7 +25,7 @@ export const teamMembers: TeamMembers[] = [
     },
   },
   {
-    image: "/member-avatar-02.webp",
+    image: "./member-avatar-02.webp",
     name: "James Walker",
     field: "Backend Developer",
     quote: "Building scalable, reliable backend systems.",
@@ -36,7 +36,7 @@ export const teamMembers: TeamMembers[] = [
     },
   },
   {
-    image: "/member-avatar-03.webp",
+    image: "./member-avatar-03.webp",
     name: "Michael Clark",
     field: "Software Engineer",
     quote: "Writing clean and efficient code.",
@@ -47,7 +47,7 @@ export const teamMembers: TeamMembers[] = [
     },
   },
   {
-    image: "/member-avatar-04.webp",
+    image: "./member-avatar-04.webp",
     name: "Chloe Harris",
     field: "DevOps Engineer",
     quote: "Automating processes for better workflows.",
@@ -58,7 +58,7 @@ export const teamMembers: TeamMembers[] = [
     },
   },
   {
-    image: "/member-avatar-05.webp",
+    image: "./member-avatar-05.webp",
     name: "Olivia Taylor",
     field: "Data Engineer",
     quote: "Turning raw data into useful insights.",
@@ -69,7 +69,7 @@ export const teamMembers: TeamMembers[] = [
     },
   },
   {
-    image: "/member-avatar-06.webp",
+    image: "./member-avatar-06.webp",
     name: "Daniel Smith",
     field: "Full Stack Developer",
     quote: "Building scalable, full-stack solutions.",
@@ -80,7 +80,7 @@ export const teamMembers: TeamMembers[] = [
     },
   },
   {
-    image: "/member-avatar-07.webp",
+    image: "./member-avatar-07.webp",
     name: "Emily Davis",
     field: "Mobile Developer",
     quote: "Creating intuitive mobile applications.",
@@ -91,7 +91,7 @@ export const teamMembers: TeamMembers[] = [
     },
   },
   {
-    image: "/member-avatar-08.webp",
+    image: "./member-avatar-08.webp",
     name: "John Mitchell",
     field: "Security Engineer",
     quote: "Securing applications with preventive measures.",
