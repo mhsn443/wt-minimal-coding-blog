@@ -85,7 +85,7 @@ export default function Footer() {
             </svg>
           </a>
           <a
-            href="https://github.com/mhsn013000"
+            href="https://github.com/mhsn443"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-accent-foreground transition-transform hover:scale-110"
