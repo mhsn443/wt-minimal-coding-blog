@@ -11,11 +11,14 @@ type StaticParams = {
 const POSTS_PER_PAGE = 8;
 const totalPages = Math.ceil(postsList.length / POSTS_PER_PAGE);
 
+// Generate static params for SSG deployment
 export const generateStaticParams = () => {
   const pages = Array.from({ length: totalPages }, (_, index) => ({
+    // Create an array of page params for pagination (e.g., ["page", "2"])
     page: ["page", (index + 1).toString()],
   }));
 
+  // Add the root blog page as first page
   pages.unshift({ page: [] });
 
   return pages;

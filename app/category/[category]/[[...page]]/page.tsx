@@ -14,31 +14,37 @@ type StaticParams = {
 const allCategories = categories.concat(featuredCategories);
 const POSTS_PER_PAGE = 8;
 
+// Generate static params for SSG deployment
 export const generateStaticParams = () => {
-  return allCategories
-    .map((category) => {
-      const categoryPosts = postsList.filter(
-        (post) =>
-          post.category.slug === category.slug ||
-          post.featuredCategories?.some(
-            (featuredCategory) => featuredCategory.slug === category.slug,
-          ),
-      );
+  return (
+    allCategories
+      .map((category) => {
+        // Find all posts that have this category as their main or featured category
+        const categoryPosts = postsList.filter(
+          (post) =>
+            post.category.slug === category.slug ||
+            post.featuredCategories?.some(
+              (featuredCategory) => featuredCategory.slug === category.slug,
+            ),
+        );
 
-      const totalPages = Math.ceil(categoryPosts.length / POSTS_PER_PAGE);
+        const totalPages = Math.ceil(categoryPosts.length / POSTS_PER_PAGE);
 
-      const pages: StaticParams[] = [];
+        const pages: StaticParams[] = [];
 
-      for (let page = 1; page <= totalPages; page++) {
-        pages.push({
-          category: category.slug,
-          page: page === 1 ? [] : ["page", page.toString()],
-        });
-      }
+        // Create param object for each page (e.g., /category-name/page/2), except first page
+        for (let page = 1; page <= totalPages; page++) {
+          pages.push({
+            category: category.slug,
+            page: page === 1 ? [] : ["page", page.toString()],
+          });
+        }
 
-      return pages;
-    })
-    .flat();
+        return pages;
+      })
+      // Merge all category page arrays into one combined array
+      .flat()
+  );
 };
 
 export default async function CategoryPosts({

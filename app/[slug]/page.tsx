@@ -18,7 +18,9 @@ type StaticParams = {
   slug: string;
 };
 
+// Generate static params for SSG deployment
 export const generateStaticParams = () => {
+  // Map all posts and return their slugs as params
   return post.map((p) => ({
     slug: p.slug,
   }));
