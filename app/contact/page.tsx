@@ -28,13 +28,13 @@ export default function Contact() {
               </h2>
               <p className="mt-1 text-sm">Here’s how to reach us.</p>
               <span className="mt-10 flex flex-col items-start gap-x-4 gap-y-2 sm:flex-row">
-                <Phone className="size-6" /> +1-800-555-1234
+                <Phone className="size-6 shrink-0" /> +1-800-555-1234
               </span>
               <span className="mt-5 flex flex-col items-start gap-x-4 gap-y-2 sm:flex-row">
-                <Mail className="size-6" /> email@example.com
+                <Mail className="size-6 shrink-0" /> email@example.com
               </span>
               <span className="mt-5 flex flex-col items-start gap-x-4 gap-y-2 sm:flex-row">
-                <MapPin className="size-6" /> 789 Maple Ave, Suite 305,
+                <MapPin className="size-6 shrink-0" /> 789 Maple Ave, Suite 305,
                 Rivertown, TX 75001, USA
               </span>
             </div>
